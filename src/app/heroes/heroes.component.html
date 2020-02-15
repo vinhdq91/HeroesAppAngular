@@ -1,0 +1,22 @@
+<ul>
+  <li *ngFor="let hero of heroes" class="col-1-4"
+      routerLink="/hero-detail/{{hero.id}}"
+      [class.selected]="hero === selectedHero"
+  >
+    <p>{{ hero.name | uppercase }}</p>
+    <!-- <div>
+      <label for="name">
+        <input [(ngModel)]="hero.name" placeholder="name" />
+      </label>
+    </div> -->
+  </li>
+
+  <!-- <app-hero-detail
+      [hero]="selectedHero"
+  ></app-hero-detail> -->
+</ul>
+
+
+
+
+
