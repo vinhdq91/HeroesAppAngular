@@ -1,6 +1,13 @@
 <div *ngIf="hero">
   <h1>Detail</h1>
   <p>{{ hero.name | uppercase }}</p>
+  <div>
+    <label for="name">
+      <input [(ngModel)]="hero.name" placeholder="name" />
+    </label>
+    <br>
+    <button (click)="save()">Save</button>
+  </div>
 </div>
 
 <button (click)="goBack()">Go back to previous page</button>

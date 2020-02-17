@@ -1,20 +1,21 @@
 <ul>
-  <li *ngFor="let hero of heroes" class="col-1-4"
-      routerLink="/hero-detail/{{hero.id}}"
+  <li *ngFor="let hero of heroes; index as heroIndex" class="col-1-4"
       [class.selected]="hero === selectedHero"
   >
-    <p>{{ hero.name | uppercase }}</p>
-    <!-- <div>
-      <label for="name">
-        <input [(ngModel)]="hero.name" placeholder="name" />
-      </label>
-    </div> -->
+    <p routerLink="/hero-detail/{{hero.id}}">{{ hero.name | uppercase }}</p>
+    <button (click)="delete(heroIndex, hero)" >Delete</button>
   </li>
-
-  <!-- <app-hero-detail
-      [hero]="selectedHero"
-  ></app-hero-detail> -->
 </ul>
+
+<div>
+  <label>Hero name:
+    <input #heroName />
+  </label>
+  <!-- (click) passes input value to add() and then clears the input -->
+  <button (click)="add(heroName.value); heroName.value=''">
+    add
+  </button>
+</div>
 
 
 
