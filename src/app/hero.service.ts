@@ -91,7 +91,7 @@ export class HeroService {
   }
 
   /* GET heroes whose name contains search term */
-  searchHeroesd(term: string): Observable<Hero[]> {
+  searchHeroes(term: string): Observable<Hero[]> {
     if (!term.trim()) {
       return of([]);
     }
